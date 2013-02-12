@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
-<title>The Title Of Your Presentation</title>
+<title>XProc at the heart of an ebook production framework</title>
 
 <body>
   <section class="bg-dark">
@@ -9,11 +9,11 @@
     <hr class="bc3"/>
               <p class="color3" style="font-size: 30px;  font-weight: bold">Romain Deltour</p>
               <p class="color2">XML Prague – February 9th 2013</p>
-    <details role="note">
+    <aside role="note">
       My name is Romain Deltour, and I'm going to talk about our experience of using XProc and other XML technologies at the heart of a modular eBook production tool.
 
       I'm a software developer and I work for the DAISY Consortium, a global not-profit organization working towards the best way to read and publish since the late 90ies. 
-    </details>
+    </aside>
   </section>
 
 
@@ -31,10 +31,10 @@
       <a style="" href="http://daisy.org" title="DAISY Consortium homepage">&nbsp;http://daisy.org&nbsp;</a>
     </figcaption>
     </figure>
-    <details role="note">
+    <aside role="note">
       <p>Before diving in the nitty gritty of the topic, let me first give a brief overview of the context.</p>
       <p>We're engaged in development of specifications, tools, and educational efforts. We developed several standards for Digital Talking Books, targeted primarily at print-disabled users. More recently, we've got closer to the IDPF and endorsed EPUB 3 as the recommended format for distributing accessible content.</p>
-    </details>
+    </aside>
   </section>
   
   <section class="gallery dense bg3">
@@ -59,9 +59,9 @@
       	" src="./images/FingerBraille.jpg" width="242" height="161" alt="les doigts">
       	</li>
       </ul>
-      <details role="note">
+      <aside role="note">
          As I said, we're focused on inclusive publishing; which means we target every reader, whether they read with eyes, ears or fingers.
-      </details>
+      </aside>
   </section>
 
   <section class="dense gallery bg5">
@@ -105,20 +105,20 @@
         "  src="./images/Braille3.jpg" width="210" height="138" alt="Braille3">
         </li>
       </ul>
-      <details role="note">
+      <aside role="note">
         Being inclusive also means publishers have to deal with an ever increasing variety of platforms and devices.
-      </details>
+      </aside>
   </section>
   
   <section class="bg2 dense">
     <h3 class="color4">Single-source publishing</h3>
     <div class="incremental">
-      <img src="./images/single-source.png" height="400px" style="position: absolute; top: 150px; left: 100px">
-      <img src="./images/other-sources.png" height="400px" style="position: absolute; top: 150px; left:100px">
+      <img src="./images/single-source.png" height="400" style="position: absolute; top: 150px; left: 100px" alt="Convert from a single XML master document to a variety of output formats">
+      <img src="./images/other-sources.png" height="400" style="position: absolute; top: 150px; left:100px" alt="However a variety of different input XML formats can be used.">
     </div>
-    <details role="note">
+    <aside role="note">
       The best approach to deal with this situation is typically to adopt a single-source publishing pattern (...) however in reality, publishers of access-enhanced material often have to re-publish content from different kind of formats.
-    </details>
+    </aside>
   </section>
 
   <!-- ============================== -->
@@ -127,20 +127,20 @@
 
   <section class="bg-light">
     <h2>A <strong class="color5">modular</strong> XML system</h2>
-    <details role="note">
+    <aside role="note">
       The DAISY Pipeline project intends to assist with the production of accessible content by providing cross-format converters and processing utilities.
       In a more down-to-earth language, we want to be able to convert from a variety of formats to other formats. Primarily XML, sometimes not. XML pipes in, XML pipes out. Perfect fit for XProc.
-    </details>
+    </aside>
   </section>
 
   <section>
       <figure class="image">
         <img src="./images/pipes.jpg">
-        <div><figcaption>Maintain these pipelines ? ...sigh...</figcaption></div>
+        <figcaption>Maintain these pipelines ? ...sigh...</figcaption>
       </figure>
-      <details role="note">
+      <aside role="note">
         When used not only for one-shot scripts but as the core of a large system, we need to ensure the maintainability and scalability of the system. Would you want to be the plumber fixing this thing ? (*** showing pic of messy tubes***)
-      </details>
+      </aside>
   </section>
   
   <section>
@@ -148,9 +148,9 @@
         <img src="./images/lego-plumber.jpg">
         <figcaption>Modules to the rescue!</figcaption>
       </figure>
-      <details role="note">
+      <aside role="note">
         Fortunately, as known for decades, modularization can help. We did a little plumbing to make our pipelines as modular as we could.
-      </details>
+      </aside>
   </section>
   
   <section class="list bg-light">
@@ -161,12 +161,12 @@
       <li class="bg1" style="margin-right: 30px">Encapsulation</li>
       <li class="bg1" style="margin-right: 0px">Dependency Management</li>
     </ul>
-    <details role="note">
+    <aside role="note">
       The basic principles are pretty simple.<br/>
       - Modules are not "statically bond" one to another; i.e. we do not want to rely on relative URIs.<br/>
       - Modules can declare public components (public URIs) and encapsulate private components (not accessible to other modules)<br/>
       - Modules can declare requirements to other modules<br/>
-    </details>
+    </aside>
   </section>
   
   <section class="dense bg3">
@@ -186,16 +186,16 @@ Bundle-SymbolicName: org.daisy.pipeline.modules.daisy3-to-epub3
 Bundle-Version: 1.0.0.SNAPSHOT
 Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>      
     </figure>
-    <details role="note">
+    <aside role="note">
       Concretely, a module in our system is a ZIP container with two special files: an OASIS XML catalog declaring the module's public component URIs, and an OSGi MANIFEST declaring the module's metadata (ID, version, dependencies, etc.).
-    </details>
+    </aside>
   </section>
   
   <section class="bg1">
     <h2 class="color3">A shared URI resolver <em class="color4">registers</em> the modules' catalogs</h2>
-    <details role="note">
+    <aside role="note">
       The middleware implements a shared URI resolver that keeps track of all the modules' catalogs, so that references to absolute URIs in another module can be resolved to the dependent modules' internals.
-    </details>
+    </aside>
   </section>
   
   <!-- ============================== -->
@@ -204,8 +204,8 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
   
   <section class="bg-dark">
     <h2 style="color: #fff"><strong class="color1">Beyond</strong> XProc...</h2>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section class="image">
@@ -213,9 +213,9 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
         <img src="./images/pipes.jpg">
         <figcaption>A complex system, we know, but...</figcaption>
       </figure>
-      <details role="note">
+      <aside role="note">
         As I said the system can be pretty complex.
-      </details>
+      </aside>
   </section>
   
   <section class="image">
@@ -223,17 +223,17 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
         <img src="./images/taps.jpg">
         <figcaption style="text-align:right">a simple user interface!</figcaption>
       </figure>
-      <details role="note">
+      <aside role="note">
         But in the end, the user is only interested with the functional interface.<br/>
         I'm going to present how we extend XProc and sometimes hide its idiosyncrasies for a seamless integration in a user-oriented system.
-      </details>
+      </aside>
   </section>
   
   <section class="bg4">
     <h2 class="color3">Users should only be aware of <em class="color2">top-level</em> scripts</h2>
-    <details role="note">
+    <aside role="note">
       First, not all or modules or even XProc scripts are intended to be directly manipulated by the user. Some modules only contain utilities, some scripts are only intermediary step implementations. We identify the user-oriented scripts by adding some package-level metadata (in the OASIS catalog, converted at build time in OSGi-metadata).
-    </details>
+    </aside>
   </section>
   
   <section class="dense bg2">
@@ -251,10 +251,10 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
   &lt;/p&gt;
 &lt;/p:documentation&gt;</code></pre>
     </figure>
-    <details role="note">
+    <aside role="note">
       Additionally, we augment user-oriented XProc scripts with human- and machine-readable metadata.
       We use XProc's native 'p:documentation' element, congaing HTML with semantic annotations.
-    </details>
+    </aside>
   </section>
   
   <section class="bg3">
@@ -270,9 +270,9 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
     ...
 &lt;/p:option&gt;</code></pre>      
     </figure>
-    <details role="note">
+    <aside role="note">
       Metadata is also used to add typing information to the XProc signature. This info is notably used in user interfaces, to create appropriate input widgets when configuring XProc jobs.
-    </details>
+    </aside>
   </section>
 
   <section class="dense bg4">
@@ -297,9 +297,9 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
   &lt;/p:store&gt;
 &lt;/p:declare-step&gt;</code></pre>      
     </figure>    
-    <details role="note">
+    <aside role="note">
       In these two pipelines: the functionality exposed to the user is the same: we give a doc as input and receive a doc as output. The system has to understand that the intent of the option is to store a result, hence we annotate it with px:output="result".
-    </details>
+    </aside>
   </section>
   
   <section class="list bg1">
@@ -318,14 +318,14 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
     
   <section class="bg-light">
     <h2><span class="block ">XProc</span> <strong class="color4">Tips</strong> &amp; <strong class="color4">Best practices</strong></h2>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section class="bg2">
     <h2 class="">Use <em class="color5">intermediary formats</em> <span style="font-size: 30px"><br/>(e.g. for fileset manipulations)</span></h2>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section class="dense bg4">
@@ -345,20 +345,20 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
           media-type=&quot;text/css&quot;/&gt;
 &lt;/d:fileset&gt;</code></pre>
     </figure>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section class="bg3 color4">
     <h2>Rely on <em style="color: #111">base URIs</em></h2>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section  class="bg2">
     <h2>Use XProc for <em class="color4">orchestration</em></h2>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
   
   <section class="list bg-light">
@@ -369,53 +369,50 @@ Require-Bundle: org.daisy.pipeline.modules.epub3-nav-utils,...</code></pre>
       <li class="bg1" style="margin-right: 0px">Modularize the workflow</li>
       <li class="bg1" style="margin-right: 30px">Leverage the XML stack</li>
     </ul>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
 
   <!-- ============================== -->
   <!-- ==        Closing           == -->
   <!-- ============================== -->
   <section class="list bg3">
-    <h3>A wishlist</h2>
+    <h3>A wishlist</h3>
     <ul style="margin:0">
       <li>Native XPath functions</li>
       <li>Better Base URI manipulation</li>
       <li>Readable ports from XPath</li>
     </ul>
-    <h2 class="color5" style="margin-top: 320px; text-align: center; font-family: ArchitectsDaughterRegular"><strong>Join the community!</strong></p>
-      <details role="note">
-      </details>
+    <h2 class="color5" style="margin-top: 320px; text-align: center; font-family: ArchitectsDaughterRegular"><strong>Join the community!</strong></h2>
+      <aside role="note">
+      </aside>
   </section>
   
   <section class="final bg-dark">
-    <h1 class="h1 color1"><strong>Thank You!</strong></strong></h1>
+    <h1 class="h1 color1"><strong>Thank You!</strong></h1>
     <footer class="bg-dark">
-      <p><a href="http://daisy.org/pipeline2" class="color3">http://daisy.org/pipeline2</a></p>
-      <p><a href="http://code.google.com/p/daisy-pipeline/" class="color3">http://code.google.com/p/daisy-pipeline/</a></p>
+      <p class="color3"><a href="http://daisy.org/pipeline2" class="color3">http://daisy.org/pipeline2</a></p>
+      <p class="color3"><a href="http://code.google.com/p/daisy-pipeline/" class="color3">http://code.google.com/p/daisy-pipeline/</a></p>
       <p class="color3"><a href="http://github.com/daisy-consortium/" class="color3">http://github.com/daisy-consortium/</a></p>
       <p class="color4"><i class="icon icon-envelope-alt"></i>&nbsp;rdeltour@gmail.com</p>
       <p class="color1"><i class="icon icon-twitter"></i>&nbsp;@rdeltour</p>
-      <!-- <img src="./images/email.png"/> -->
     </footer>
-    <details role="note">
-    </details>
+    <aside role="note">
+    </aside>
   </section>
 
+  <div id="progress-bar"></div>
+
+  <link rel="stylesheet" href="./css/dz-core.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/animate.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/highlight-github-mod.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="./css/slides.css" type="text/css"/>
+
+
+  <script src="./js/dz-core.js"></script>
+  <script src="./js/dz-helper.js"></script>
+  <script src="./js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   
 </body>
-
-
-<div id="progress-bar"></div>
-<link rel="stylesheet" href="./css/dz-core.css" type="text/css"></link>
-<link rel="stylesheet" href="./css/animate.css" type="text/css"></link>
-<link rel="stylesheet" href="./css/highlight-github-mod.css" type="text/css"></link>
-<link rel="stylesheet" href="./css/font-awesome.min.css">
-<link rel="stylesheet" href="./css/slides.css" type="text/css"></link>
-
-
-<script src="./js/dz-core.js"></script>
-<script src="./js/dz-helper.js"></script>
-<script src="./js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
