@@ -241,54 +241,17 @@ section.gallery {
   position: absolute;
 }
 
-/*a
-{
-  padding: 4px;
-  font-family: 'Orienta', "arial", sans-serif;
-  text-decoration: none;
-  background-color: #333333;
-  color: #FFFFFF;
-}
-a:active
-{
-  text-decoration: none;
-  background-color: #333333;
-  color: #FFFFFF;
-}
-a:visited
-{
-  text-decoration: none;
-  background-color: #333333;
-  color: #FFFFFF;
-}
-a:link
-{
-  text-decoration: none;
-  background-color: #333333;
-  color: #FFFFFF;
-}
-a:hover
-{
-  text-decoration: none;
-  background-color: #FFFFFF;
-  color: #333333;
-}
-*/
 figure.quote {
   background-color: #444;
   color: rgb(216,223,192);
 }
 
 blockquote {
-/*  height: 100%;*/
-/*  color: rgb(216,223,192);*/
   font: normal 50px/58px 'VollkornRegular', Times, serif;
-/*  font-stretch: ultra-expanded;*/
   padding: 50px;
 }
 blockquote > em {
   font-style: normal;
-/*  border-bottom: 2px dashed ;*/
 }
 
 blockquote:before {
@@ -299,7 +262,6 @@ blockquote:after {
 }
 
 figure.quote > figcaption {
-/*    color: rgb(150,212,207);*/
   color: rgb(240,114,24);
   padding-left: 70px;
 }
@@ -319,10 +281,11 @@ a:visited {
  color:inherit;   
 }
 a:link {
-  
+  color:inherit;     
 }
 a:hover {
   text-decoration:underline;
+  color:inherit;
 }
 
 figure.quote > figcaption:before {
@@ -332,17 +295,15 @@ figure.quote > figcaption:before {
 /* Figures are displayed full-page, with the caption
    on top of the image/video */
 figure {
-/*  background-color: black;*/
   width: 100%;
   height: 100%;
 }
-/*figure > * {
-  
-}*/
+
 figure > img, figure > video {
   position: absolute;
   width: 100%; height: 100%;
 }
+
 .image figcaption  {
   font: normal 1em 'ArchitectsDaughterRegular', Arial, sans-serif;
   color: #ffffff;
@@ -406,7 +367,7 @@ figure.code > figcaption {
 
 figure.code  pre {
   padding: 15px 30px 15px;
-  overflow: scroll;  
+  overflow: hidden;  
 /*  background-color: #eee;*/
 }
 
@@ -499,159 +460,68 @@ section[aria-selected] ~ section { left: +150%; }
   height: 2px;
   background: #AAA;
 }
-/*
-.animated.first {
+
+.animated {
   -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 500ms;
   -webkit-animation-iteration-count: 1;
 
   -o-animation-duration: 1s;
-  -o-animation-delay: 500ms;
   -o-animation-iteration-count: 1;
 
   -ms-animation-duration: 1s;
-  -ms-animation-delay: 500ms;
   -ms-animation-iteration-count: 1;
 
   -moz-animation-duration: 1s;
-  -moz-animation-delay: 500ms;
   -moz-animation-iteration-count: 1;
 
   animation-duration: 1s;
-  animation-delay: 500ms;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1;  
 }
-*/
+
 .animated.p1 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 0.5s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 0.5s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 0.5s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 0.5s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
   animation-delay: 0.5s;
-  animation-iteration-count: 1;
 }
 
 .animated.p2 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 1s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 1s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 1s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
   animation-delay: 1s;
-  animation-iteration-count: 1;
-  
 }
 
 .animated.p3 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1.5s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 1.5s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 1.5s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 1.5s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
-  animation-delay: 1.5s;
-  animation-iteration-count: 1;
-  
+  animation-delay: 1.5s;  
 }
 
 .animated.p4 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 2s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 2s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 2s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
   animation-delay: 2s;
-  animation-iteration-count: 1;
 }
 
 .animated.p5 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 2.5s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 2.5s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 2.5s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 2.5s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
   animation-delay: 2.5s;
-  animation-iteration-count: 1;
 }
 
 .animated.p6 {
-  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 3s;
-  -webkit-animation-iteration-count: 1;
-
-  -o-animation-duration: 1s;
   -o-animation-delay: 3s;
-  -o-animation-iteration-count: 1;
-
-  -ms-animation-duration: 1s;
   -ms-animation-delay: 3s;
-  -ms-animation-iteration-count: 1;
-
-  -moz-animation-duration: 1s;
   -moz-animation-delay: 3s;
-  -moz-animation-iteration-count: 1;
-
-  animation-duration: 1s;
   animation-delay: 3s;
-  animation-iteration-count: 1;
 }
