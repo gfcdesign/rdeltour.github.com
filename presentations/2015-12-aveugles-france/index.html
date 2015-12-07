@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>EPUB 3 : Potentiels et usage</title>
+		<meta name="description" content="Journées étude 2015 de la Fédération des Aveugles de France : les NTIC dédiées aux déficients visuels">
+		<meta name="author" content="Romain Deltour">
+		<meta name="author" content="Fernando Pinto Da Silva">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>EPUB 3</h1>
+					<h3 style="margin-bottom: 2em">Potentiels et usage</h3>
+					<p>
+						<small>Romain Deltour – <a href="http://twitter.com/rdeltour">@rdeltour</a></small>
+						<br />
+						<small>Fernando Pinto Da Silva – <a href="http://twitter.com/fpintodasilva">@fpintodasilva</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Le format EPUB 3</h1>
+				</section>
+
+				<section>
+					<h2>DAISY et EPUB...</h2>
+					<ul class="fragment">
+						<li>DAISY 2.0 (1998)</li>
+						<li>EPUB 2 (2002)</li>
+						<li>DAISY 3 (2005)</li>
+						<li>EPUB 3 (2011)</li>
+						<li class="fragment">À venir en 2016 : <b>EPUB 3.1</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Un format accessible</h2>
+					<ul>
+						<li>Navigabilité</li>
+						<li>Texte fluide</li>
+						<li>Structure sémantique</li>
+						<li>Audio synchronisé ou TTS</li>
+						<li>et plus...</li>
+					</ul>
+					<p class="fragment">⇒ voir le <a href="http://idpf.org/accessibility/guidelines/">guide d'accessibilité</a> de l'IDPF</p>
+				</section>
+
+				<section>
+					<h2>Travaux en cours</h2>
+					<p>EPUB 3.1 : révision majeure, en 2016</p>
+					<ul class="fragment">
+						<li>Alignement avec le Web</li>
+						<li>Méta données &amp; accessibilité</li>
+						<li>Description d'image</li>
+						<li>Synchronisation audio variable, vidéo ?</li>
+						<li>Braille ?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>EPUB « Born accessible »</h2>
+					<blockquote class="fragment grow" style="margin-top: 2em; margin-bottom: 2em;">« Que devons-nous faire pour rendre nos publications accessibles ? »</blockquote>
+					<p class="fragment">⇒ Besoin d'une réponse simple, consensuelle et inclusive.</p>
+				</section>
+
+				<section>
+					<h2>Où trouver des EPUB 3 ?</h2>
+					<ul class="fragment">
+						<li>Format encore peu répandu en France</li>
+						<li><b>Feedbooks</b> et <b>ePagine</b> : collections EPUB 2</li>
+						<li><b>Gallica</b> : 219 titres EPUB 3 accessible</li>
+						<li><b>Hachette</b> : commercialisation Q1 2016</li>
+					</ul>
+					<p class="fragment">⇒ Prise en compte progressive</p>
+				</section>
+
+				<!-- Prise en compte progressive de ce nouveau format par les éditeurs et des enjeux liés à l’accessibilité. -->
+
+				<section>
+					<h1>Systèmes de lecture</h1>
+				</section>
+
+				<section>
+					<h2>Comment faire son choix ?</h2>
+					<p><a href="http://epubtest.org/">http://epubtest.org</a></p>
+					<p class="fragment" style="margin-top: 4em;">Pour cette présentation, utilisation de <i>Sous le vent</i>, échantillon disponible à l’adresse<br/> <a href="http://idpf.github.io/epub3-samples/samples.html">http://idpf.github.io/epub3-samples/samples.html</a></p>					
+				</section>
+
+				<section>
+					<h1>Readium</h1>
+					<p>Un projet open source de la <a href="http://readium.org">Readium Foundation</a> / <a href="">EDRLab</a></p>
+					<ul class="fragment">
+						<li>Composant logiciel réutilisable</li>
+						<li>Readium JS / Readium SDK</li>
+						<li>Media overlays avec la mise en page fluide</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1 style="text-transform: inherit">iBooks</h1>
+					<p>Application iOS d'Apple</p>
+					<ul class="fragment">
+						<li>Media overlays en mise en page fixe.</li>
+						<li>Lecture possible avec VoiceOver, mais page à page</li>
+						<li>Déplacement dans le texte difficile</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Voice Dream Reader</h1>
+					<p>Disponible sous IOS et Android</p>
+					<p class="fragment">Ne gère pas ce fragment : lit le code source !</p>
+				</section>
+
+				<section>
+					<h1>Lecteurs DAISY</h1>
+					<p>mode « dégradé » EPUB 2</p>
+					<div class="fragment">
+					<p>Exemple: <b>Victor Reader Stream</b> nouvelle génération</p>
+					<ul>
+						<li>lecture continue, déplacement « basique »</li>
+						<li>Ne permet pas d’accéder aux fonctionnalités avancées</li>
+						<li>EPUB 3 dans les 18 mois à venir...</li>
+					</ul>
+					</div>
+				</section>
+
+				<section>
+					<p style="font-size: 1.5em">Merci pour votre attention !</p>
+					<h1 style="margin-top: 1.5em; margin-bottom: 1.5em;">Questions ?</h1>
+					<p><a href="https:/twitter.com/fpintodasilva">@fpintodasilva</a> – <a href="https:/twitter.com/rdeltour">@rdeltour</a></p>
+				</section>
+ 			</div>
+
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
