@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Web App Manifests - A (very) quick intro</title>
+    <meta name="author" content="Romain Deltour">
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css">
+    <link rel="stylesheet" href="./css/hljs-monokai-sublime.css">
+    <style>
+      .reveal h2 {
+        margin-bottom: 1.5em;
+      }
+      .reveal code {
+        font-size: 1.5em;
+      }
+      .reveal pre {
+        margin-top: 3em;
+      }
+      .reveal blockquote {
+        margin-bottom: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <script type="text/template">
+# Web App Manifest
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Why?
+
+> Install web apps to the user's home screen
+
+ * information about an application
+ * key component of progressive web apps
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## What?
+
+A simple JSON document
+```html
+<link rel="manifest" href="manifest.json">
+```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Example
+
+```json
+{
+    "lang": "en",
+    "short_name": "Resilience",
+    "name": "Resilient Web Design by Jeremy Keith",
+    "description": "A web book in seven chapters on the past, present, and future of web design. By Jeremy Keith.",
+    "icons": [{
+        "src": "/images/icon48.png",
+        "sizes": "48x48",
+        "type": "image/png"
+    }, {
+        "src": "/images/icon96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#5f7995",
+    "theme_color": "#5f7995"
+}
+```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Some metadata
+
+- short name
+- description
+- background color
+- icons
+- link to equivalent apps in app stores
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Start URL
+
+URL that loads when a user launches the application from a device
+
+```
+"start_url": "./?utm_source=web_app_manifest"
+```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Scope
+
+the navigation scope of the web app's application context
+
+```
+"scope": "/myapp/"
+```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Orientation
+
+- landscape
+- portrait
+- any
+- natural
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+## Display mode
+
+Defines the developer's preferred display mode for the web app
+
+```
+"display": "standalone"
+```
+
+Allowed values:
+
+- fullscreen
+- standalone
+- minimal-ui
+- browser
+- …_reading-system_?
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+https://www.w3.org/TR/appmanifest/
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+      // Options which are passed into marked
+      // See https://github.com/chjj/marked#options-1
+        markdown: {
+          smartypants: true
+        },
+        dependencies: [
+
+          // Interpret Markdown in <section> elements
+          { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+          // Syntax highlight for <code> elements
+          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+          // Zoom in and out with Alt+click
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+        ]
+      });
+    </script>
+  </body>
+</html>
